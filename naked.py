@@ -114,5 +114,5 @@ if r.status_code == 200:
 	else:
 		print("No asteroids close passing earth today")
 
-else:
+else:   # API connect error
 	print("Unable to get response from API. Response code: " + str(r.status_code) + " | content: " + str(r.text))
