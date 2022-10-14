@@ -58,6 +58,7 @@ if r.status_code == 200:
 					tmp_ast_hazardous = val['is_potentially_hazardous_asteroid']
 
 					if len(val['close_approach_data']) > 0:
+                                                # Need to implement looping through the array, not to read the first element.
 						if 'epoch_date_close_approach' and 'relative_velocity' and 'miss_distance' in val['close_approach_data'][0]:
 							tmp_ast_close_appr_ts = int(val['close_approach_data'][0]['epoch_date_close_approach']/1000)
 							tmp_ast_close_appr_dt_utc = datetime.utcfromtimestamp(tmp_ast_close_appr_ts).strftime('%Y-%m-%d %H:%M:%S')
@@ -83,7 +84,7 @@ if r.status_code == 200:
 						tmp_ast_close_appr_dt = "1970-01-01 00:00:00"
 						tmp_ast_speed = -1
 						tmp_ast_miss_dist = -1
-
+                                        # Info display/print
 					print("------------------------------------------------------- >>")
 					print("Asteroid name: " + str(tmp_ast_name) + " | INFO: " + str(tmp_ast_nasa_jpl_url) + " | Diameter: " + str(tmp_ast_diam_min) + " - " + str(tmp_ast_diam_max) + " km | Hazardous: " + str(tmp_ast_hazardous))
 					print("Close approach TS: " + str(tmp_ast_close_appr_ts) + " | Date/time UTC TZ: " + str(tmp_ast_close_appr_dt_utc) + " | Local TZ: " + str(tmp_ast_close_appr_dt))
