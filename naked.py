@@ -4,16 +4,30 @@ import json
 import datetime
 import time
 import yaml
+from configparser import ConfigParser #library for config parsing and import
 
 from datetime import datetime
 print('Asteroid processing service')
+# Konfiguracijas parseris kurš nolasa no config.ini
+try:
+                config = ConfigParser()
+                config.read('config.ini')
+
+                nasa_api_key = config.get('nasa', 'api_key')
+                nasa_api_url = config.get('nasa', 'api_url')
+
+               # mysql_config_mysql_host = config.get('mysql_config', 'mysql_host')
+               # mysql_config_mysql_db = config.get('mysql_config', 'mysql_db')
+               # mysql_config_mysql_user = config.get('mysql_config', 'mysql_user')
+               # mysql_config_mysql_pass = config.get('mysql_config', 'mysql_pass')
+except:
+                logger.exception('')
+print ('DONE')
+
 
 # Initiating and reading config values
 print('Loading configuration from file')
 
-# add NASA API key
-nasa_api_key = "S02Nzx0IK6qzNnMB4kQxrTzrXt2lMdUBedZ1fhr4"
-nasa_api_url = "https://api.nasa.gov/neo/"
 
 # Getting todays date
 dt = datetime.now()
