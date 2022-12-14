@@ -5,7 +5,7 @@ import requests
 import json
 import datetime
 import time
-import yaml # lai lasit .yaml
+import yaml # for  Read .yaml
 from configparser import ConfigParser #library for config parsing and import
 
 from datetime import datetime
@@ -25,7 +25,7 @@ logger = logging.getLogger('root')
 print('Loading configuration from file')
 
 
-# Konfiguracijas parseris kurš nolasa no config.ini
+# Konfiguracijas parseris kurš nolasa konfiguraciju no config.ini
 try:
                 config = ConfigParser()
                 config.read('config.ini')
