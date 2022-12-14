@@ -6,7 +6,7 @@ import json
 import datetime
 import time
 import yaml # for  Read .yaml
-import mysql.connector # lai savienotos ar DB
+import mysql.connector # lai savienoties ar DB
 
 from mysql.connector import Error # DB atkludosanai
 from configparser import ConfigParser #library for config parsing and import
