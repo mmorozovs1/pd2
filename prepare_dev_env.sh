@@ -51,7 +51,7 @@ if [ $? -eq 0 ]; then echo "OK"; else echo "DB migration FAILED"; exit 1; fi
 echo "------------------------------------------------"
 
 echo "Running asteroid worker tests"
-$python_exec_loc my_test.py
+$python_exec_loc naked.py
 if [ $? -eq 0 ]; then echo "OK"; else echo "Worker test FAILED"; exit 1; fi
 echo "------------------------------------------------"
 
